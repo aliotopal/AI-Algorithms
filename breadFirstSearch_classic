@@ -19,13 +19,13 @@ print('The goal is: ', goal)
 while queue:
     path = queue.pop(0)   # get the  first list from queue
     print('poped path ',path)
-    state = path[-1]      # get the first state of the poped list
+    node = path[-1]      # get the first state of the poped list
     if state == goal:
         print('the path is: ',path)
         break
     if node not in visited:
-        visited.append(state)
-    children = graph[state]   
+        visited.append(node)
+    children = graph[node]   
     for child in children:
         if child not in visited:
             newPath = path + list(child)
