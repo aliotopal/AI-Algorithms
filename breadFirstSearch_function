@@ -1,0 +1,24 @@
+
+
+
+def bfs(graph, start, goal):
+    queue = [[start]]
+    expanded = []
+
+    if start == goal:
+        return "That was easy!, Start = goal"
+
+    while queue:
+        path = queue.pop(0)  # pop the first path from the queue
+        node = path[-1]     # get the last node from the path
+        if node not in expanded:
+            children = graph[node]
+            for child in children:
+                new_path = list(path)
+                new_path.append(child)
+                queue.append(new_path)
+                if child == goal:
+                    return print('This is shorthest path: ', new_path)
+            expanded.append(node)
+        print(queue)
+    return (print(expanded))
