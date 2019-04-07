@@ -1,4 +1,12 @@
+''' bread first search'''
 
+graph = {'S':['A','G'],
+         'A':['B','C'],
+         'B':['D'],
+         'C':['D','G'],
+         'D':['G'],
+         'G':['G']
+        }
 
 
 def bfs(graph, start, goal):
@@ -22,3 +30,6 @@ def bfs(graph, start, goal):
             expanded.append(node)
         print(queue)
     return (print(expanded))
+
+
+bfs(graph, 'S','G')
