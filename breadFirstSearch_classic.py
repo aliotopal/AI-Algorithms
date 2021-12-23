@@ -20,7 +20,7 @@ while queue:
     path = queue.pop(0)   # get the  first list from queue
     print('poped path ',path)
     node = path[-1]      # get the first state of the poped list
-    if state == goal:
+    if node == goal:
         print('the path is: ',path)
         break
     if node not in visited:
